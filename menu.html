@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Brew and Bloom Cafe - Menu</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <style>
+          li {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          img {
+            max-width: 83%;
+            aspect-ratio: 1;
+            transition-duration: 0.3s;
+            position: relative;
+            animation-name: anime;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+          }
+          ul.menu {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            padding: 20px;
+          }
+          img:hover {
+            height: 250px;
+            width:250px;
+          }
+          @keyframes anime {
+            100%{
+              left:10px;
+            }
+          }
+          /* Media Query for smaller screens */
+          @media (max-width: 768px) {
+            ul.menu {
+              grid-template-columns: 1fr ;  /* 2 columns for tablets */
+              gap: 60px;  /* Adjust spacing between items */
+            }
+            img {
+              max-width: 90%; /* Make images slightly larger on smaller screens */
+            }
+            li {
+              margin-bottom: 40px;  /* Give some space between list items */
+            }
+            h1 {
+              font-size: 1.5em; /* Adjust heading size for smaller screens */
+            }
+          }
+          
+          @media (max-width: 480px) {
+            ul.menu {
+              grid-template-columns: 1fr;  /* Single column for mobile */
+              gap: 30px;  /* Reduce gap for smaller screens */
+            }
+            img {
+              max-width: 100%; /* Allow images to take up full width */
+              height: auto;  /* Keep aspect ratio intact */
+            }
+            h1 {
+              font-size: 1.2em; /* Adjust heading size even more for mobile */
+            }
+          }
+          
+        </style>
+    </head>
+    <body>
+    <header>
+        <nav>
+          <ul class="nav-link">
+            <li><a href="project1(create web page).html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Items</a></li>
+            <!--<li><a href="#">Reviews</a></li>-->
+          </ul>
+        </nav>
+        <a href="contactus.html"><button>Contact Us</button></a>
+    </header>
+    <h1 style="margin-top: 60px;text-align: center;"><u>OUR MENU</u></h1>
+    <br>
+    <ul class="menu">
+      <li>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnOAJI8YuCKOfgvwew05p0QLthMCudpuiUNQ&s" height="200px" width="200px" alt="Hot Beverages">
+        <h3>Hot Beverages</h3>
+        <pre style="margin-top: 10px">Wide range of Steaming hot 
+  coffe to make you fresh and light.</pre>
+      </li>
+      <li>
+        <img src="cold bevearages.jpeg" height="200px" width="200px" alt="Cold Beverages">
+        <h3>Cold Beverages</h3>
+        <pre style="margin-top: 10px">Creamy and Frothy cold coffe to 
+make you cool.</pre>
+      </li>
+      <li>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvTH-ORs3BN-48yF6Y1goCA7tRrhP2jIbPyA&s" height="200px" width="200px" alt="Refreshment">
+        <h3>Refreshment</h3>
+        <pre style="margin-top: 10px">Fruit and icy Refreshing drink to 
+make feel refresh.</pre>
+      </li>
+      <li>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjYY0C61vMOpqad5QiBLLbsbbhbxNHNIWPRQ&s" height="200px" width="200px" alt="Special Combos">
+        <h3>Special Combos</h3>
+        <pre style="margin-top: 10px">Your favourite eating and drinking 
+combinations.</pre>
+      </li>
+      <li>
+        <img src="Dessert.jpeg" height="200px" width="200px" alt="Dessert">
+        <h3>Dessert</h3>
+        <pre style="margin-top: 10px">Satiate your palate and take you 
+on a culinary treat.</pre>
+      </li>
+      <li>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTahG7-FtQ2n5sbrjwrCGsD7lOUritxvvf2-A&s" height="200px" width="200px" alt="Burger and French Fries">
+        <h3>Burger and French Fries</h3>
+        <pre style="margin-top: 10px">Quick bites to satisfy your small 
+size hunger.</pre>
+      </li>
+    </ul> 
+</body>
+</html>

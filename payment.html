@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment - Brew and Bloom Cafe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: maroon;
+        }
+        .payment-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .payment-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .payment-form input, .payment-form select, .payment-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-form button {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .payment-form button:hover {
+            opacity: 0.9;
+        }
+        .order-summary {
+            margin-bottom: 20px;
+        }
+        .order-summary h3 {
+            color:black;
+        }
+        .order-summary p {
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-form">
+        <h2>Confirm Your Order</h2>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div id="order-summary-items">
+                <!-- Dynamic item list will be inserted here -->
+            </div>
+
+            <hr>
+            <h4>Total: Rs. <span id="total-price">0</span></h4>
+        </div>
+
+        <h3>Select Payment Method</h3>
+        <form action="conformation.html" method="POST">
+            <!-- Payment Method Selection -->
+            <label for="payment-method">Choose Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="gpay">Google Pay</option>
+                <option value="cash-on-delivery">Cash on Delivery</option>
+                <option value="online-payment">Online Payment (Credit/Debit Card)</option>
+            </select>
+
+            <div id="payment-details">
+                <!-- Conditional inputs based on payment method -->
+                <div id="gpay-info" style="display:none;">
+                    <label for="gpay-number">Enter Google Pay Number:</label>
+                    <input type="text" id="gpay-number" name="gpay-number" placeholder="Your Google Pay Number">
+                </div>
+
+                <div id="cod-info" style="display:none;">
+                    <p>Cash will be collected upon delivery.</p>
+                </div>
+
+                <div id="card-info" style="display:none;">
+                    <label for="card-name">Cardholder Name:</label>
+                    <input type="text" id="card-name" name="card-name" placeholder="Cardholder Name" required>
+
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="Card Number" required>
+
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+                </div>
+            </div>
+
+            <button type="submit"><a style="text-decoration:none;color:black" href="conformation.html">Confirm Payment</a></button>
+        </form>
+    </div>
+
+    <script>
+        // Retrieve the order details from localStorage
+        const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+        const orderSummaryContainer = document.getElementById("order-summary-items");
+        const totalPriceElement = document.getElementById("total-price");
+        let total = 0;
+
+        // Display the order summary dynamically
+        for (const item in orderDetails) {
+            const quantity = orderDetails[item].quantity;
+            const price = orderDetails[item].price;
+            const itemTotal = quantity * price;
+
+            if (quantity > 0) {
+                const itemElement = document.createElement("p");
+                itemElement.innerHTML = `<strong>${item.charAt(0).toUpperCase() + item.slice(1)}:</strong> ${quantity} x Rs.${price} = Rs.${itemTotal}`;
+                orderSummaryContainer.appendChild(itemElement);
+
+                total += itemTotal;
+            }
+        }
+
+        // Update the total price
+        totalPriceElement.textContent = total;
+
+        // Payment Method Selection Logic
+        const paymentMethodSelect = document.getElementById("payment-method");
+
+        paymentMethodSelect.addEventListener("change", function() {
+            const selectedMethod = paymentMethodSelect.value;
+
+            // Hide all payment details
+            document.getElementById("gpay-info").style.display = "none";
+            document.getElementById("cod-info").style.display = "none";
+            document.getElementById("card-info").style.display = "none";
+
+            // Show relevant payment details based on the selected method
+            if (selectedMethod === "gpay") {
+                document.getElementById("gpay-info").style.display = "block";
+            } else if (selectedMethod === "cash-on-delivery") {
+                document.getElementById("cod-info").style.display = "block";
+            } else if (selectedMethod === "online-payment") {
+                document.getElementById("card-info").style.display = "block";
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

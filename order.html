@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Brew and Bloom Cafe</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <style>
+            ul.menu-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+                padding: 20px;
+            }
+            li {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+           }
+           p{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            color:white;
+            font-family:cursive;
+            font-style: normal;
+            font:bold;
+            font-size: medium;
+            text-align: center;  
+            }
+            .order-btn {
+                padding: 10px 20px;
+                background-color: blue;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+                transition-duration: 0.3s;
+            }
+            .order-btn:hover{
+                border-radius: 20px;
+                background-color: blueviolet;
+            }
+            
+            @media (max-width: 768px) {
+                ul.menu-list {
+                    grid-template-columns: 1fr;
+                }
+            }
+            mark{
+                background-color: burlywood;
+            }
+        </style>
+    </head>
+    <body>
+    <header>
+        <nav>
+          <ul class="nav-link">
+            <li><a href="project1(create web page).html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Items</a></li>
+            <!--<li><a href="#">Reviews</a></li>-->
+          </ul>
+        </nav>
+        <a href="contactus.html"><button>Contact Us</button></a>
+    </header>
+    <h1 style="text-align: center;"><u>ORDER ITEMS</u></h1>
+    <ul class="menu-list">
+        <li>
+            <h3><mark color="violet">Hot Coffee</mark></h3>
+            <h4>Price: Rs.30</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Cold Coffee</mark></h3>
+            <h4>Price: Rs.50</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Fruit Punch</mark></h3>
+            <h4>Price: Rs.60</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Special Combo</mark></h3>
+            <h4>Price: Rs.200</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Chocolate Dessert</mark></h3>
+            <h4>Price: Rs.100</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Burger & Fries</mark></h3>
+            <h4>Price: Rs.250</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+      <li>
+            <h3><mark color="violet">Ice Cream Dessert</mark></h3>
+            <h4>Price: Rs.100</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+      <li>
+            <h3><mark color="violet">Cake Dessert</mark></h3>
+            <h4>Price: Rs.150</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Shakes</mark></h3>
+            <h4>Price: Rs.80</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+        <li>
+            <h3><mark color="violet">Maggi</mark></h3>
+            <h4>Price: Rs.50</h4>
+            <a href="ordernowpage.html"><button class="order-btn">Order Now</button></a>
+        </li>
+    </ul>
+</body>
+</html>
